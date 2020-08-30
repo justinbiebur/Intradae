@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  provider:
   material_design_icons_flutter: 4.0.5345
   google_fonts: ^1.1.0
   curved_navigation_bar: ^0.3.3

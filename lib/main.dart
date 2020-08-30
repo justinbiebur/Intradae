@@ -1,5 +1,7 @@
 import 'package:Intradae/src/homepage.dart';
+import 'package:Intradae/src/model/navigationProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
         
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Homepage(),
+      home: ChangeNotifierProvider<NavigationProvider>(
+        create: (context)=> NavigationProvider(),
+        child: Homepage(),
+      )
     );
   }
 }

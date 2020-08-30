@@ -9,7 +9,7 @@ class ContestBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 165,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
         color: Colors.white,
@@ -18,7 +18,7 @@ class ContestBox extends StatelessWidget {
             color: Colors.black,
             blurRadius: 2.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0), 
+            offset: Offset(2.0, 2.0),
           )
         ],
       ),
@@ -46,7 +46,7 @@ class ContestBox extends StatelessWidget {
                   child: Text(
                     "Ends in - 2:30 PM ",
                     style: GoogleFonts.montserrat(
-                        color: Colors.redAccent[700],
+                        color: Colors.red,
                         fontSize: 11,
                         fontWeight: FontWeight.w500),
                   ),
@@ -75,7 +75,8 @@ class ContestBox extends StatelessWidget {
                           child: RichText(
                               text: TextSpan(
                                   text: "Live Price - ",
-                                  style: GoogleFonts.montserrat(color: Colors.black, fontSize: 11),
+                                  style: GoogleFonts.montserrat(
+                                      color: Colors.black, fontSize: 11),
                                   children: [
                             TextSpan(
                                 text: "2889977.99",
@@ -138,12 +139,45 @@ class ContestBox extends StatelessWidget {
           ),
 
           //LinearBar
-          Container(child: LinearProgressIndicator(
-            value: 0.4,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-            backgroundColor: Colors.red[100],
-          ),
-          padding: EdgeInsets.all(10))
+          Container(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: Text(
+                          "Tickets Remaining - 8",
+                          style: GoogleFonts.montserrat(fontSize: 10),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  Container(
+                    child: LinearProgressIndicator(
+                      value: 0.4,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                      backgroundColor: Colors.red[100],
+                    ),
+                  ),
+
+                  //Expand Arror
+                  Container(
+                    margin: EdgeInsets.only(bottom: 4),
+                    child: IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.expand_more,
+                          color: Colors.black,
+                          size: 18,
+                        )),
+                    height: 20,
+                  )
+                ],
+              ),
+              padding: EdgeInsets.only(top: 5, left: 10, right: 10))
         ],
       ),
     );

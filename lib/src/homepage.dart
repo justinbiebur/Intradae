@@ -1,11 +1,9 @@
-import 'package:Intradae/src/contests.dart';
-import 'package:Intradae/src/mycontests.dart';
-import 'package:Intradae/src/profile.dart';
+import 'package:Intradae/src/model/navigationProvider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -14,14 +12,15 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
 
-  int _currentIndex = 1; 
-  final List<Widget> _pages = [
-    MyContests(),
-    ContestPage(),
-    ProfilePage()
+  final List<String> _pages = [
+    "Home",
+    "MyContest",
+    "Profile"
   ];
+
   @override
   Widget build(BuildContext context) {
+    final navigation = Provider.of<NavigationProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -32,22 +31,26 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
       ),
-      body: _pages[_currentIndex],
+      body: Consumer<NavigationProvider>(
+          builder: (context, navigationProvider, _) =>
+              navigationProvider.getNavigation),
+
+
       bottomNavigationBar: CurvedNavigationBar(
-        index: _currentIndex,
+        index: 0,
         height: 50,
         color: Colors.blue[900],
         backgroundColor: Colors.white,
         buttonBackgroundColor: Colors.blue[900],
-        items: <Widget>[          
+        items: <Widget>[         
+          Icon(Icons.home,color: Colors.white), 
           Icon(Icons.shopping_cart,color: Colors.white),
-          Icon(Icons.home,color: Colors.white),
-          Icon(Icons.person,color: Colors.white),
+          Icon(Icons.person,color: Colors.white)
           ],
           onTap: (index){
-            setState(() {
-              _currentIndex = index;
-            });
+            print(index);
+            print(_pages[index]);
+            navigation.updateNavigation(_pages[index]);
           },
       ),
     );
