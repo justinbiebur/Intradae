@@ -119,6 +119,7 @@ class ContestBox extends StatelessWidget {
                     color: Colors.blue[900],
                     onPressed: () {
                       showModalBottomSheet(
+                        isScrollControlled: true,
                           context: context,
                           builder: (context) => SingleChildScrollView(
                                 child: Container(
