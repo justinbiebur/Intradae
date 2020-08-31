@@ -1,18 +1,18 @@
-
+import 'package:Intradae/src/components/confirmTicketModal.dart';
 import 'package:Intradae/src/components/contestName.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContestBox extends StatelessWidget {
-
-  ContestBox({Key key,}) : super(key: key);
+  ContestBox({
+    Key key,
+  }) : super(key: key);
 
   final TextEditingController textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       height: 165,
       decoration: BoxDecoration(
@@ -27,7 +27,7 @@ class ContestBox extends StatelessWidget {
           )
         ],
       ),
-      margin: EdgeInsets.all(15),
+      margin: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -106,42 +106,33 @@ class ContestBox extends StatelessWidget {
 
                 //Right
                 Container(
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                          child: SizedBox(
-                        height: 30,
-                        width: 100,
-                        child: TextField(
-                          controller: textController,
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(fontSize: 14),
-                          decoration: InputDecoration(
-                            hintText: "My Estimate",
-                          ),
-                        ),
-                      )),
-                      Container(
-                        margin: EdgeInsets.only(left: 10),
-                        height: 30,
-                        width: 50,
-                        child: MaterialButton(
-                          child: Text("GO",
-                              style: GoogleFonts.raleway(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold)),
-                          color: Colors.blue[900],
-                          onPressed: () {
-                            
-                            confirmTicket(context, textController.text);
-                            textController.clear();
-                          },
-                        ),
-                      )
-                    ],
+                    child: Container(
+                  margin: EdgeInsets.only(left: 10),
+                  height: 30,
+                  width: 80,
+                  child: MaterialButton(
+                    child: Text("JOIN",
+                        style: GoogleFonts.raleway(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold)),
+                    color: Colors.blue[900],
+                    onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) => SingleChildScrollView(
+                                child: Container(
+                                  child: ConfirmTicket(),
+                                  padding: EdgeInsets.only(
+                                      bottom: MediaQuery.of(context)
+                                          .viewInsets
+                                          .bottom),
+                                ),
+                              ));
+                      textController.clear();
+                    },
                   ),
-                )
+                ))
               ],
             ),
           ),
@@ -166,8 +157,9 @@ class ContestBox extends StatelessWidget {
                   Container(
                     child: LinearProgressIndicator(
                       value: 0.4,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-                      backgroundColor: Colors.red[100],
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Colors.blue[900]),
+                      backgroundColor: Colors.blue[100],
                     ),
                   ),
 
@@ -189,17 +181,5 @@ class ContestBox extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void confirmTicket(context, String estimate){
-    showModalBottomSheet(context: context, builder: (BuildContext bc){
-      return Container(
-        height: MediaQuery.of(context).size.height*0.4,
-        child: Column(children: <Widget>[
-          Text(estimate),
-          RaisedButton(child: Text("Confirm"), onPressed: null,)
-        ],),
-      );
-    });
   }
 }

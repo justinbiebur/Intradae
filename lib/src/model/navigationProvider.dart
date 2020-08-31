@@ -4,7 +4,7 @@ import 'package:Intradae/src/pages/profile.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class NavigationProvider with ChangeNotifier {
+class NavigationProvider extends ChangeNotifier {
   String currentNavigation = "Home";
 
   Widget get getNavigation {

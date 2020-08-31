@@ -13,6 +13,7 @@ class _ContestPageState extends State<ContestPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 50),
       child: ContestBox(),
     );
   }

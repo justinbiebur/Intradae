@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Intradar Demo',
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
         
         visualDensity: VisualDensity.adaptivePlatformDensity,
