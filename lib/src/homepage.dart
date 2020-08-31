@@ -11,12 +11,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
-  final List<String> _pages = [
-    "Home",
-    "MyContest",
-    "Profile"
-  ];
+  final List<String> _pages = ["Home", "MyContest", "Profile"];
 
   @override
   Widget build(BuildContext context) {
@@ -30,28 +25,39 @@ class _HomepageState extends State<Homepage> {
             color: Colors.black,
           ),
         ),
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right: 5),
+            child: IconButton(
+              icon: Icon(
+                Icons.account_balance_wallet,
+                size: 30,
+                color: Colors.blue[900],
+              ),
+              onPressed: null,
+            ),
+          )
+        ],
       ),
       body: Consumer<NavigationProvider>(
           builder: (context, navigationProvider, _) =>
               navigationProvider.getNavigation),
-
-
       bottomNavigationBar: CurvedNavigationBar(
         index: 0,
         height: 50,
         color: Colors.blue[900],
         backgroundColor: Colors.white,
         buttonBackgroundColor: Colors.blue[900],
-        items: <Widget>[         
-          Icon(Icons.home,color: Colors.white), 
-          Icon(Icons.shopping_cart,color: Colors.white),
-          Icon(Icons.person,color: Colors.white)
-          ],
-          onTap: (index){
-            print(index);
-            print(_pages[index]);
-            navigation.updateNavigation(_pages[index]);
-          },
+        items: <Widget>[
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.shopping_cart, color: Colors.white),
+          Icon(Icons.person, color: Colors.white)
+        ],
+        onTap: (index) {
+          print(index);
+          print(_pages[index]);
+          navigation.updateNavigation(_pages[index]);
+        },
       ),
     );
   }

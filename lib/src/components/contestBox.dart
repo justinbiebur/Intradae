@@ -1,13 +1,18 @@
-import 'package:Intradae/src/contestName.dart';
+
+import 'package:Intradae/src/components/contestName.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContestBox extends StatelessWidget {
-  const ContestBox({Key key}) : super(key: key);
+
+  ContestBox({Key key,}) : super(key: key);
+
+  final TextEditingController textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       height: 165,
       decoration: BoxDecoration(
@@ -108,6 +113,7 @@ class ContestBox extends StatelessWidget {
                         height: 30,
                         width: 100,
                         child: TextField(
+                          controller: textController,
                           keyboardType: TextInputType.number,
                           style: TextStyle(fontSize: 14),
                           decoration: InputDecoration(
@@ -116,7 +122,7 @@ class ContestBox extends StatelessWidget {
                         ),
                       )),
                       Container(
-                        margin: EdgeInsets.only(left: 5),
+                        margin: EdgeInsets.only(left: 10),
                         height: 30,
                         width: 50,
                         child: MaterialButton(
@@ -127,7 +133,9 @@ class ContestBox extends StatelessWidget {
                                   fontWeight: FontWeight.bold)),
                           color: Colors.blue[900],
                           onPressed: () {
-                            debugPrint("pressed");
+                            
+                            confirmTicket(context, textController.text);
+                            textController.clear();
                           },
                         ),
                       )
@@ -181,5 +189,17 @@ class ContestBox extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void confirmTicket(context, String estimate){
+    showModalBottomSheet(context: context, builder: (BuildContext bc){
+      return Container(
+        height: MediaQuery.of(context).size.height*0.4,
+        child: Column(children: <Widget>[
+          Text(estimate),
+          RaisedButton(child: Text("Confirm"), onPressed: null,)
+        ],),
+      );
+    });
   }
 }

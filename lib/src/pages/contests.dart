@@ -1,4 +1,5 @@
-import 'package:Intradae/src/contestBox.dart';
+import 'package:Intradae/src/components/contestBox.dart';
+
 import 'package:flutter/widgets.dart';
 
 class ContestPage extends StatefulWidget {
