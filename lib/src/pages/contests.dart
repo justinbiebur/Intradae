@@ -13,8 +13,10 @@ class _ContestPageState extends State<ContestPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(color: Color(0xff000051)),
       padding: EdgeInsets.only(bottom: 50),
-      child: ContestBox(),
+      child: Column(
+        children:[ContestBox(),ContestBox()]),
     );
   }
 }
