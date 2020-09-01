@@ -10,11 +10,13 @@ class ContestName extends StatelessWidget {
     return ClipPath(
         clipper: ClipperClass(),
         child: Container(
-          color: Colors.blue[900],
+          decoration: BoxDecoration(color:Color(0xff000051),borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8))),
+          
           child: Center(
             child: Text(
               "Interglobe Aviation",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.kronaOne(
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),

@@ -17,7 +17,7 @@ class ContestBox extends StatelessWidget {
       height: 165,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.white,
+        color: Color(0xff001064),
         boxShadow: [
           BoxShadow(
             color: Colors.black,
@@ -51,7 +51,7 @@ class ContestBox extends StatelessWidget {
                   child: Text(
                     "Ends in - 2:30 PM ",
                     style: GoogleFonts.montserrat(
-                        color: Colors.red,
+                        color: Color(0xffffb2dd),
                         fontSize: 11,
                         fontWeight: FontWeight.w500),
                   ),
@@ -59,7 +59,7 @@ class ContestBox extends StatelessWidget {
                 Icon(
                   Icons.timer,
                   size: 12,
-                  color: Colors.redAccent[700],
+                  color: Color(0xffffb2dd),
                 ),
               ],
             ),
@@ -79,27 +79,27 @@ class ContestBox extends StatelessWidget {
                       Container(
                           child: RichText(
                               text: TextSpan(
-                                  text: "Live Price - ",
-                                  style: GoogleFonts.montserrat(
-                                      color: Colors.black, fontSize: 11),
+                                  text: "Live Price : ",
+                                  style: GoogleFonts.kronaOne(
+                                      color: Colors.white, fontSize: 11),
                                   children: [
                             TextSpan(
                                 text: "2889977.99",
-                                style: GoogleFonts.montserrat(
-                                    fontSize: 11, color: Colors.green))
+                                style: GoogleFonts.kronaOne(
+                                    fontSize: 11, color: Colors.tealAccent))
                           ]))),
                       SizedBox(
                         height: 5,
                       ),
                       Container(
                           child: Text("Entry Fee : 20",
-                              style: GoogleFonts.montserrat(fontSize: 11))),
+                              style: GoogleFonts.kronaOne(color: Colors.white,fontSize: 11))),
                       SizedBox(
                         height: 5,
                       ),
                       Container(
                           child: Text("Winnings : 2000",
-                              style: GoogleFonts.montserrat(fontSize: 11)))
+                              style: GoogleFonts.kronaOne(color: Colors.white,fontSize: 11)))
                     ],
                   ),
                 ),
@@ -107,16 +107,17 @@ class ContestBox extends StatelessWidget {
                 //Right
                 Container(
                     child: Container(
+                      decoration: BoxDecoration(color: Color(0xffffb2dd),borderRadius: BorderRadius.circular(12)),
                   margin: EdgeInsets.only(left: 10),
                   height: 30,
                   width: 80,
                   child: MaterialButton(
                     child: Text("JOIN",
-                        style: GoogleFonts.raleway(
+                        style: GoogleFonts.kronaOne(
                             color: Colors.white,
                             fontSize: 10,
                             fontWeight: FontWeight.bold)),
-                    color: Colors.blue[900],
+                    
                     onPressed: () {
                       showModalBottomSheet(
                         isScrollControlled: true,
@@ -149,7 +150,8 @@ class ContestBox extends StatelessWidget {
                         margin: EdgeInsets.only(bottom: 5),
                         child: Text(
                           "Tickets Remaining - 8",
-                          style: GoogleFonts.montserrat(fontSize: 10),
+                          style: GoogleFonts.kronaOne(fontSize: 10,color: Colors.white)
+                          
                         ),
                       )
                     ],
@@ -159,8 +161,8 @@ class ContestBox extends StatelessWidget {
                     child: LinearProgressIndicator(
                       value: 0.4,
                       valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.blue[900]),
-                      backgroundColor: Colors.blue[100],
+                          AlwaysStoppedAnimation<Color>(Color(0xff000051)),
+                      backgroundColor: Color(0xffffb2dd),
                     ),
                   ),
 
@@ -171,7 +173,7 @@ class ContestBox extends StatelessWidget {
                         onPressed: null,
                         icon: Icon(
                           Icons.expand_more,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 18,
                         )),
                     height: 20,

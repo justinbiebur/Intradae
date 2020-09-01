@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Intradar Demo',
+      title: 'Intradae Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        
+        backgroundColor: Color(0xff000051),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ChangeNotifierProvider<NavigationProvider>(
