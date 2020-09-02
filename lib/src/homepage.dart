@@ -19,11 +19,11 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       backgroundColor: Color(0xff000051),
       appBar: AppBar(
-        backgroundColor: Color(0xff000051), 
+        backgroundColor: Color(0xff01001f), 
         elevation: 0.0,
         title: Text(
           "INTRADAE",
-          style: GoogleFonts.kronaOne(
+          style: GoogleFonts.montserrat(
             color: Colors.white,
           ),
         ),
@@ -33,7 +33,7 @@ class _HomepageState extends State<Homepage> {
             child: IconButton(
               icon: Icon(
                 Icons.account_balance_wallet,
-                size: 30,
+                size: 25,
                 color: Colors.white,
               ),
               onPressed: null,
@@ -47,9 +47,9 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: CurvedNavigationBar(
         index: 0,
         height: 50,
-        color: Color(0xff000051),
-        backgroundColor:Color(0xffffb2dd),
-        buttonBackgroundColor: Color(0xff000051),
+        color: Color(0xff041e42),
+        backgroundColor:Color(0xff01001f),
+        buttonBackgroundColor: Color(0xff041e42),
         items: <Widget>[
           Icon(Icons.home, color: Colors.white),
           Icon(Icons.shopping_cart, color: Colors.white),
