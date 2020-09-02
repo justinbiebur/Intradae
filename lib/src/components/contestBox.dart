@@ -161,7 +161,7 @@ class ContestBox extends StatelessWidget {
                     child: LinearProgressIndicator(
                       value: 0.4,
                       valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.grey[700]),
+                          AlwaysStoppedAnimation<Color>(Colors.black87),
                       backgroundColor: Colors.grey
                     ),
                   ),
