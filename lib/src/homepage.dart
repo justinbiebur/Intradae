@@ -17,14 +17,15 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     final navigation = Provider.of<NavigationProvider>(context);
     return Scaffold(
-      backgroundColor: Color(0xff000051),
+      backgroundColor: Color(0xff0e021f),
       appBar: AppBar(
-        backgroundColor: Color(0xff000051), 
+        backgroundColor: Color(0xff0e021f), 
         elevation: 0.0,
         title: Text(
           "INTRADAE",
-          style: GoogleFonts.kronaOne(
+          style: GoogleFonts.montserrat(
             color: Colors.white,
+            
           ),
         ),
         actions: <Widget>[
@@ -44,12 +45,13 @@ class _HomepageState extends State<Homepage> {
       body: Consumer<NavigationProvider>(
           builder: (context, navigationProvider, _) =>
               navigationProvider.getNavigation),
+              
       bottomNavigationBar: CurvedNavigationBar(
         index: 0,
         height: 50,
-        color: Color(0xff000051),
-        backgroundColor:Color(0xffffb2dd),
-        buttonBackgroundColor: Color(0xff000051),
+        color: Color(0xff1E1E30),
+        backgroundColor:Color(0xff0e021f),
+        buttonBackgroundColor: Color(0xff0e021f),
         items: <Widget>[
           Icon(Icons.home, color: Colors.white),
           Icon(Icons.shopping_cart, color: Colors.white),

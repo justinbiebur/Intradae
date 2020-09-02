@@ -13,10 +13,12 @@ class _ContestPageState extends State<ContestPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Color(0xff000051)),
+      decoration: BoxDecoration(color: Color(0xff0e021f)),
       padding: EdgeInsets.only(bottom: 50),
-      child: Column(
-        children:[ContestBox(),ContestBox()]),
+      child: SingleChildScrollView(
+              child: Column(
+          children:[ContestBox(),ContestBox(),ContestBox(),ContestBox()]),
+      ),
     );
   }
 }

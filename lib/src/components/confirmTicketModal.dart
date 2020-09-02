@@ -33,7 +33,7 @@ class ConfirmTicket extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "Interglobe Aviation",
-                          style: GoogleFonts.rubik(
+                          style: GoogleFonts.montserrat(
                               color: Colors.blue[900],
                               fontSize: 24,
                               fontWeight: FontWeight.bold),
@@ -74,7 +74,7 @@ class ConfirmTicket extends StatelessWidget {
                                 children: <Widget>[
                                   Text(
                                     "Wallet Balance ",
-                                    style: GoogleFonts.rubik(
+                                    style: GoogleFonts.montserrat(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w800),
                                   ),
