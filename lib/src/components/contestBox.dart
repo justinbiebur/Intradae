@@ -17,7 +17,9 @@ class ContestBox extends StatelessWidget {
       height: 165,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
+
         color: Color(0xff1E1E30),
+
         boxShadow: [
           BoxShadow(
             color: Colors.black,
@@ -51,7 +53,9 @@ class ContestBox extends StatelessWidget {
                   child: Text(
                     "Ends in - 2:30 PM ",
                     style: GoogleFonts.montserrat(
+
                         color: Colors.red[400],
+
                         fontSize: 11,
                         fontWeight: FontWeight.w500),
                   ),
@@ -59,7 +63,9 @@ class ContestBox extends StatelessWidget {
                 Icon(
                   Icons.timer,
                   size: 12,
+
                   color: Colors.red[300],
+
                 ),
               ],
             ),
@@ -107,15 +113,19 @@ class ContestBox extends StatelessWidget {
                 //Right
                 Container(
                     child: Container(
+
                       decoration: BoxDecoration(color: Color(0xff132240),borderRadius: BorderRadius.circular(12)),
+
                   margin: EdgeInsets.only(left: 10),
                   height: 30,
                   width: 80,
                   child: MaterialButton(
                     child: Text("JOIN",
                         style: GoogleFonts.montserrat(
+
                             color: Color(0xff007BFF),
                             fontSize: 11,
+
                             fontWeight: FontWeight.bold)),
                     
                     onPressed: () {
@@ -161,8 +171,10 @@ class ContestBox extends StatelessWidget {
                     child: LinearProgressIndicator(
                       value: 0.4,
                       valueColor:
+
                           AlwaysStoppedAnimation<Color>(Colors.black87),
                       backgroundColor: Colors.grey
+
                     ),
                   ),
 

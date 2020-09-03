@@ -19,7 +19,9 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       backgroundColor: Color(0xff0e021f),
       appBar: AppBar(
+
         backgroundColor: Color(0xff0e021f), 
+
         elevation: 0.0,
         title: Text(
           "INTRADAE",
@@ -34,7 +36,7 @@ class _HomepageState extends State<Homepage> {
             child: IconButton(
               icon: Icon(
                 Icons.account_balance_wallet,
-                size: 30,
+                size: 25,
                 color: Colors.white,
               ),
               onPressed: null,
@@ -49,9 +51,11 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: CurvedNavigationBar(
         index: 0,
         height: 50,
+
         color: Color(0xff1E1E30),
         backgroundColor:Color(0xff0e021f),
         buttonBackgroundColor: Color(0xff0e021f),
+
         items: <Widget>[
           Icon(Icons.home, color: Colors.white),
           Icon(Icons.shopping_cart, color: Colors.white),
